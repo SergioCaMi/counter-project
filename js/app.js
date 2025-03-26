@@ -1,7 +1,7 @@
 // Estados de la app
 // Estado inicial
-const btnLower = document.querySelector(".prevBtn");
-const btnNext = document.querySelector(".nextBtn");
+// const btnLower = document.querySelector(".prevBtn");
+// const btnNext = document.querySelector(".nextBtn");
 const displayCounter = document.querySelector("#counter");
 var counter = 0;
 
