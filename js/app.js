@@ -8,24 +8,47 @@ var counter = 0;
 
 // Asociamos eventos
 
-btnLower.addEventListener("click", ()=>{
-    //Actualizamos variables
-    counter--;
-    //Actualizamos DOM
-    displayCounter.textContent = counter;
-    if (counter<0)displayCounter.style.color = "red";
-    if (counter==0)displayCounter.style.color = "black";
+const btnCount = document.querySelectorAll(".btn");
+
+// Opción 2 con arrays de objetos
+
+btnCount.forEach(btn => {
+    btn.addEventListener("click", (e)=>{
+        //Actualizamos variables
+        if (e.target.classList.contains("prevBtn")) {
+            counter--;
+        } else if (e.target.classList.contains("nextBtn")) {
+            counter++;
+        }
+        //Actualizamos DOM
+        displayCounter.textContent = counter;
+        if (counter<0)displayCounter.style.color = "red";
+        if (counter==0)displayCounter.style.color = "black";
+        if (counter>0)displayCounter.style.color = "green";
+    });
 });
 
-btnNext.addEventListener("click", ()=>{
-    //Actualizamos variables
-    counter++;
-    //Actualizamos DOM
-    displayCounter.textContent = counter;
-    if (counter>0)displayCounter.style.color = "green";
-    if (counter==0)displayCounter.style.color = "black";
 
-});
+// Opción 1 Simplificada
+
+// btnLower.addEventListener("click", ()=>{
+//     //Actualizamos variables
+//     counter--;
+//     //Actualizamos DOM
+//     displayCounter.textContent = counter;
+//     if (counter<0)displayCounter.style.color = "red";
+//     if (counter==0)displayCounter.style.color = "black";
+// });
+
+// btnNext.addEventListener("click", ()=>{
+//     //Actualizamos variables
+//     counter++;
+//     //Actualizamos DOM
+//     displayCounter.textContent = counter;
+//     if (counter>0)displayCounter.style.color = "green";
+//     if (counter==0)displayCounter.style.color = "black";
+
+// });
 
 
 
